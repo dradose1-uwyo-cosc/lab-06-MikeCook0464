@@ -1,8 +1,8 @@
-# Your Name Here
+# Michael Cook
 # UWYO COSC 1010
-# Submission Date
+# Submission Date 10/13/24
 # Lab 06
-# Lab Section: 
+# Lab Section: 16
 # Sources, people worked with, help given to: 
 # your
 # comments
@@ -70,6 +70,14 @@ print(len(random_string)) # Print out the size for reference
 # Output which letter occurred the most 
 # Output which letter occurred the least 
 # Output what the percentage of the string each character is, again in alphabetical
+
+random_dict ={}
+sorted_string = (sorted(random_string())) #sort the list
+
+counter = sorted_string(int)
+for let in random_string:
+    counter[let] += 1
+
 
 #Tips and trick:
 # You can iterate through strings like you would a list
