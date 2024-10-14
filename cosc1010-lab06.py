@@ -1,6 +1,6 @@
 # Michael Cook
 # UWYO COSC 1010
-# Submission Date 10/13/24
+# Submission Date 10/14/24
 # Lab 06
 # Lab Section: 16
 # Sources, people worked with, help given to: 
@@ -66,17 +66,10 @@ print(len(random_string)) # Print out the size for reference
 
 # Above is a string with 2500 characters.
 # Create a program that goes through and counts the occurrence of each character, excluding \n using a  dictionary
-# Output each letter and its corresponding occurrence in alphabetical order
+# Output each letter and its corresponding occurrence in alphabetical order 
 # Output which letter occurred the most 
 # Output which letter occurred the least 
 # Output what the percentage of the string each character is, again in alphabetical
-
-random_dict ={}
-sorted_string = (sorted(random_string())) #sort the list
-
-counter = sorted_string(int)
-for let in random_string:
-    counter[let] += 1
 
 
 #Tips and trick:
@@ -93,11 +86,32 @@ for let in random_string:
 
 # Output: each letter and its corresponding occurrence in alphabetical order
 
+
+random_dict = {}
+sorted_string = sorted(random_string) #sort the list
+
+for let in sorted_string:
+    if let not in random_dict:
+        random_dict[let]= 1
+print(random_dict)
+
+
 print("*"*75)
 # Output which letter occurred the most 
 
 most_occurred = ""
+max_count = 0
 least_occurred = ""
+min_count = float('inf')
+for char, count in random_dict.items():
+    if count > max_count:
+        max_count = count
+        most_occurred = char
+    
+    if count < min_count:
+        min_count = count
+        least_occurred = char
+
 
 print(f"The letter that occurred the most is {most_occurred}")
 print("*"*75)
@@ -106,3 +120,11 @@ print(f"The letter that occurred the most is {least_occurred}")
 print("*"*75)
 
 # Output what the percentage of the string each character is, again in alphabetical
+
+perc_dict = {}
+
+for ter, per in random_dict.items():
+    if ter not in perc_dict:
+      perc_dict[ter] = f"{((per / len(random_string)) * 100):.2f}%"
+
+print(perc_dict)
